@@ -22,7 +22,7 @@
         <ul class="navbar">
             <li><a href="#sin-alcohol">Sin alcohol</a></li>
             <li><a href="#con-alcohol">Con alcohol</a></li>
-            <li><a href="#contactos">Contactos</a></li>
+            <li><a href="#contacto">Contactos</a></li>
             <li><a href="carrito.html" title="Ver carrito" target="_blank">Carrito</a></li>
         </ul>
     </nav>
@@ -263,6 +263,24 @@
 </main>
 
 <footer id="contactos" class="footer">
+    <section id="contacto" class="container my-5">
+        <h2>Contacto</h2>
+        <form action="https://formspree.io/f/xwpbzbwo" method="POST">
+            <div class="mb-3">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="email">Correo:</label>
+                <input type="email" name="email" id="email" required class="form-control" />
+            </div>
+                <div class="mb-3">
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" rows="5" required class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
     <p>&copy; 2025 Mi E-Commerce. Todos los derechos reservados.</p>
 </footer>
 </body>
