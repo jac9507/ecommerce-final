@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Establece modelo de caja para todos los elementos y elimina márgenes y rellenos por defecto */
 * {
     box-sizing: border-box; /* Incluye padding y borde dentro del ancho y alto del elemento */
@@ -392,5 +391,3 @@ figcaption {
     }
 }
 
-
->>>>>>> a9859d2 (Primer commit: implementancdo js)
