@@ -68,3 +68,8 @@ function mostrarToast(mensaje) {
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchProductos();
+    actualizarContadorCarrito();
+});
