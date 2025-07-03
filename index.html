@@ -550,8 +550,27 @@
 </main>
 
 <footer id="contactos" class="footer">
+    <section id="contacto" class="">
+        <h2>Contacto</h2>
+        <form action="https://formspree.io/f/xwpbzbwo" method="POST">
+            <div class="">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required class="form-control" />
+            </div>
+            <div class="">
+                <label for="email">Correo:</label>
+                <input type="email" name="email" id="email" required class="form-control" />
+            </div>
+            <div class="">
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" rows="5" required class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
     <p>&copy; 2025 Mi E-Commerce. Todos los derechos reservados.</p>
 </footer>
+<script src="js/productos.js"></script>
 
 </body>
 </html>

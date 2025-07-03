@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#vaciar-carrito, #comprar {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+#vaciar-carrito {
+    background-color: #dc3545;
+}
+
+#vaciar-carrito:hover,
+#comprar:hover {
+    opacity: 0.9;
+}
