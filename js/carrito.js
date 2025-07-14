@@ -73,3 +73,38 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProductos();
     actualizarContadorCarrito();
 });
+
+function finalizarCompra() {
+    if (carrito.length === 0) {
+        alert('Tu carrito está vacío. Agregá productos antes de finalizar.');
+        return;
+    }
+
+    // Mostrar mensaje al usuario
+    mostrarMensajeDeCompra();
+
+    // Limpiar el carrito
+    carrito = [];
+    localStorage.removeItem('carrito');
+    mostrarCarrito();
+    actualizarContadorCarrito();
+}
+
+function mostrarMensajeDeCompra() {
+    const mensaje = document.createElement('div');
+    mensaje.classList.add('mensaje-compra');
+    mensaje.textContent = '🛍️ ¡Gracias por tu compra!';
+    mensaje.style.background = '#d4edda';
+    mensaje.style.color = '#155724';
+    mensaje.style.padding = '10px';
+    mensaje.style.margin = '15px';
+    mensaje.style.borderRadius = '5px';
+    mensaje.style.textAlign = 'center';
+
+    const carritoSeccion = document.getElementById('carrito-contenido');
+    carritoSeccion.innerHTML = '';
+    carritoSeccion.appendChild(mensaje);
+
+    // Elimina el mensaje después de unos segundos
+    setTimeout(() => mensaje.remove(), 4000);
+}
