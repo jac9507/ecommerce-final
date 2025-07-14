@@ -1,393 +1,285 @@
-/* Establece modelo de caja para todos los elementos y elimina márgenes y rellenos por defecto */
-* {
-    box-sizing: border-box; /* Incluye padding y borde dentro del ancho y alto del elemento */
-    margin: 0;               /* Elimina márgenes externos */
-    padding: 0;              /* Elimina rellenos internos */
-}
-
-/* Estilos base del body */
-body {
-    font-family: 'Arial', Helvetica, sans-serif; /* Fuente principal: Arial */
-    font-size: 1.2rem;                            /* Tamaño de fuente base escalable */
-    min-height: 100vh;                            /* Altura mínima igual al alto de la pantalla */
-    /*padding: 20px;*/                                /* Espaciado interno alrededor del contenido */
-}
-
-/* Estilo general para los hijos directos del grid */
-.grid-container > * {
-    /*box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);*/ 
-    /*border-radius: 10px;*/   /* Bordes redondeados */
-    /*padding: 10px;*/         /* Relleno interno */
-    text-align: center;    /* Alinea el contenido horizontalmente al centro */
-    font-weight: 500;      /* Peso de fuente medio (semibold) */
-}
-
-/* Contenedor principal con display grid */
-.grid-container {
-    display: grid;
-    grid-template-rows: 150px auto 40px;
-    grid-template-areas:
-    "header"
-    "main"
-    "footer";
-}
-
-
-/* Estilos individuales por área */
-/* ---HEADER--- */
-.header {
-    grid-area: header;
-    background-color: rgba(103, 93, 241, 0.74);
-    display: flex;                   /* Distribuye logo y menú horizontalmente */
-    justify-content: space-between; /* Espacio entre logo y menú */
-    align-items: center;            /* Centra verticalmente */
-    /*padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
-    flex-wrap: wrap;                /* Permite que el menú baje en pantallas chicas */
-}
-
-/* Branding (logo + título) */
-.branding {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 90px;
-    height: auto;
-}
-
-.site-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-
-/* Navegación principal */
-#main-nav {
-    /*margin-top: 10px;*/
-}
-
-.navbar {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    gap: 15px;
-}
-
-.navbar a {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(49, 47, 47);
-    display: inline-block;  
-}
-
-.navbar a:hover {
-    color: rgb(0, 0, 0);
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-}
-
-/* ---MAIN--- */
-.main {
-    grid-area: main;
-    background-color: #f5f5f5;
-}
-
-/* Secciones de productos */
-.producto-categoria {
-    padding: 20px;
-}
-
-/* Título de cada categoría */
-.categoria-titulo {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: left;
-}
-
-/* Estilo para bebidas sin alcohol */
-.sin-alcohol {
-    background-color: #e0f7fa; /* celeste claro */
-    border-left: 6px solid #00acc1;
-}
-
-.sin-alcohol .categoria-titulo {
-    color: #006064;
-}
-
-/* Estilo para bebidas con alcohol */
-.con-alcohol {
-    background-color: #fff3e0; /* naranja claro */
-    border-left: 6px solid #ef6c00;
-}
-
-.con-alcohol .categoria-titulo {
-    color: #bf360c;
-}
-
-/* Grilla de productos */
-.grid-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-/* Tarjetas */
-.card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-/* Imagen del producto */
-.producto img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 1px solid #eee;
-}
-
-/* Información del producto */
-figcaption {
-    padding: 10px 15px;
-}
-
-.producto-nombre {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #222;
-}
-
-.producto-precio {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #e67e22;
-}
-
-/* ---FOOTER--- */
-.footer {
-    grid-area: footer;
-    background-color: rgba(237, 123, 67, 0.74);
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    font-weight: 400;
-}
-
 /* Media Query para pantallas medianas o mayores */
 @media (min-width: 768px) {
     .grid-container {
         grid-template:
-            "header" 100px
-            "main" auto
-            "footer" 40px;
-    }
-}
-
-
-=======
-/* Establece modelo de caja para todos los elementos y elimina márgenes y rellenos por defecto */
-* {
-    box-sizing: border-box; /* Incluye padding y borde dentro del ancho y alto del elemento */
-    margin: 0;               /* Elimina márgenes externos */
-    padding: 0;              /* Elimina rellenos internos */
-}
-
-/* Estilos base del body */
-body {
-    font-family: 'Arial', Helvetica, sans-serif; /* Fuente principal: Arial */
-    font-size: 1.2rem;                            /* Tamaño de fuente base escalable */
-    min-height: 100vh;                            /* Altura mínima igual al alto de la pantalla */
-    /*padding: 20px;*/                                /* Espaciado interno alrededor del contenido */
-}
-
-/* Estilo general para los hijos directos del grid */
-.grid-container > * {
-    /*box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);*/ 
-    /*border-radius: 10px;*/   /* Bordes redondeados */
-    /*padding: 10px;*/         /* Relleno interno */
-    text-align: center;    /* Alinea el contenido horizontalmente al centro */
-    font-weight: 500;      /* Peso de fuente medio (semibold) */
-}
-
-/* Contenedor principal con display grid */
-.grid-container {
-    display: grid;
-    grid-template-rows: 150px auto auto;
-    grid-template-areas:
-    "header"
-    "main"
-    "footer";
-}
-
-
-/* Estilos individuales por área */
-/* ---HEADER--- */
-.header {
-    grid-area: header;
-    background-color: rgba(103, 93, 241, 0.74);
-    display: flex;                   /* Distribuye logo y menú horizontalmente */
-    justify-content: space-between; /* Espacio entre logo y menú */
-    align-items: center;            /* Centra verticalmente */
-    /*padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
-    flex-wrap: wrap;                /* Permite que el menú baje en pantallas chicas */
-}
-
-/* Branding (logo + título) */
-.branding {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 90px;
-    height: auto;
-}
-
-.site-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-
-/* Navegación principal */
-#main-nav {
-    /*margin-top: 10px;*/
-}
-
-.navbar {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    gap: 15px;
-}
-
-.navbar a {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(49, 47, 47);
-    display: inline-block;  
-}
-
-.navbar a:hover {
-    color: rgb(0, 0, 0);
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-}
-
-/* ---MAIN--- */
-.main {
-    grid-area: main;
-}
-
-/* Secciones de productos */
-.producto-categoria {
-    padding: 20px;
-}
-
-/* Título de cada categoría */
-.categoria-titulo {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: left;
-}
-
-/* Estilo para bebidas sin alcohol */
-.sin-alcohol {
-    background-color: #e0f7fa; /* celeste claro */
-    border-left: 6px solid #00acc1;
-}
-
-.sin-alcohol .categoria-titulo {
-    color: #006064;
-}
-
-/* Estilo para bebidas con alcohol */
-.con-alcohol {
-    background-color: #fff3e0; /* naranja claro */
-    border-left: 6px solid #ef6c00;
-}
-
-.con-alcohol .categoria-titulo {
-    color: #bf360c;
-}
-
-/* Grilla de productos */
-.grid-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-/* Tarjetas */
-.card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-/* Imagen del producto */
-.producto img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 1px solid #eee;
-}
-
-/* Información del producto */
-figcaption {
-    padding: 10px 15px;
-}
-
-.producto-nombre {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #222;
-}
-
-.producto-precio {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #e67e22;
-}
-
-/* ---FOOTER--- */
-.footer {
-    grid-area: footer;
-    background-color: rgba(237, 123, 67, 0.74);
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    font-weight: 400;
-}
-
-/* Media Query para pantallas medianas o mayores */
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template:
-            "header" 100px
+            "header" auto
             "main" auto
             "footer" auto;
     }
 }
+
+/* Establece modelo de caja para todos los elementos y elimina márgenes y rellenos por defecto */
+* {
+    box-sizing: border-box; /* Incluye padding y borde dentro del ancho y alto del elemento */
+    margin: 0;               /* Elimina márgenes externos */
+    padding: 0;              /* Elimina rellenos internos */
+}
+
+/* Estilos base del body */
+body {
+    font-family: 'Arial', Helvetica, sans-serif; /* Fuente principal: Arial */
+    font-size: 1.2rem;                            /* Tamaño de fuente base escalable */
+    min-height: 100vh;                            /* Altura mínima igual al alto de la pantalla */
+    /*padding: 20px;*/                                /* Espaciado interno alrededor del contenido */
+}
+
+/* Estilo general para los hijos directos del grid */
+.grid-container > * {
+    /*box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);*/ 
+    /*border-radius: 10px;*/   /* Bordes redondeados */
+    /*padding: 10px;*/         /* Relleno interno */
+    text-align: center;    /* Alinea el contenido horizontalmente al centro */
+    font-weight: 500;      /* Peso de fuente medio (semibold) */
+}
+
+/* Contenedor principal con display grid */
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+
+/* Estilos individuales por área */
+/* ---------------------------HEADER--------------------------- */
+.header {
+    grid-area: header;
+    background-color: rgba(103, 93, 241, 0.74);
+    display: flex;                   /* Distribuye logo y menú horizontalmente */
+    justify-content: space-between; /* Espacio entre logo y menú */
+    align-items: center;            /* Centra verticalmente */
+    /*padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
+    flex-wrap: wrap;                /* Permite que el menú baje en pantallas chicas */
+}
+
+/* Branding (logo + título) */
+.branding {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(49, 47, 47);
+    display: inline-block;  
+}
+
+.navbar a:hover {
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* ---------------------------MAIN--------------------------- */
+.main {
+    grid-area: main;
+    background-color: #740101;
+}
+
+/* Secciones de productos */
+.producto-categoria {
+    padding: 20px;
+}
+
+/* Título de cada categoría */
+.categoria-titulo {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+}
+
+/* Estilo para bebidas sin alcohol */
+.sin-alcohol {
+    background-color: #e0f7fa; /* celeste claro */
+    border-left: 6px solid #00acc1;
+}
+
+.sin-alcohol .categoria-titulo {
+    color: #006064;
+}
+
+/* Estilo para bebidas con alcohol */
+.con-alcohol {
+    background-color: #fff3e0; /* naranja claro */
+    border-left: 6px solid #ef6c00;
+}
+
+.con-alcohol .categoria-titulo {
+    color: #bf360c;
+}
+
+/* Grilla de productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjetas */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Imagen del producto */
+.producto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+/* Información del producto */
+figcaption {
+    padding: 10px 15px;
+}
+
+.producto-nombre {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.producto-precio {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.card-producto {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* ---------------------------FOOTER--------------------------- */
+.footer {
+    grid-area: footer;
+    color: #fff;
+    text-align: center;
+}
+
+.footer section {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+}
+
+.footer h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.footer form {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+}
+
+.footer label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.footer input,
+.footer textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #ffffff;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.footer input:focus,
+.footer textarea:focus {
+    border-color: #00ffae;
+    outline: none;
+    background-color: #111;
+}
+
+.footer button.btn {
+    background-color: #00ffae;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer button.btn:hover {
+    background-color: #00cc8a;
+    color: #fff;
+}
+
+.footer .social-icons {
+    margin-top: 30px;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #00ffae;
+    transform: scale(1.2);
+}
+
+.footer p {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+
+
+
 
